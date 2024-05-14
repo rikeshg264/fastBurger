@@ -1,5 +1,6 @@
 <?php
-    $title = ' My first php variable';
+    define('BASE_PATH', 'http://localhost:8040/fastBurger/');
+    $title = 'Fast Burger';
     // $name = $_SESSION['Rikesh'];
 
 ?>
