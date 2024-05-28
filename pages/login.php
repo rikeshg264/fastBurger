@@ -9,7 +9,7 @@
 
   <!-- <div class="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen" > --><!--mofify h-screen -->
   <div class="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen" style="height: 95vh;" >
-    <img src="https://img.freepik.com/free-photo/meat-burger-with-fried-potatoes_140725-9867.jpg?w=740&t=st=1716850828~exp=1716851428~hmac=673c703935e3323b0e646c1bfcb4d1cc15da922a92e81e6fc8d5972632ac09c5" alt="" class="w-full h-full object-cover">
+    <img src="https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302143_1280.jpg" alt="" class="w-full h-full object-cover">
   </div>
 
   <!-- <div class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
