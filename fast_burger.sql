@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2024 at 12:37 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jun 11, 2024 at 12:08 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -127,24 +127,25 @@ CREATE TABLE `order` (
   `fk_payment_id` int(11) DEFAULT NULL,
   `fk_staff_id` int(11) DEFAULT NULL,
   `fk_menu_type_id` int(11) DEFAULT NULL,
-  `fk_store_id` int(11) DEFAULT NULL
+  `fk_store_id` int(11) DEFAULT NULL,
+  `menu_name` varchar(64) NOT NULL DEFAULT 'saver'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`order_id`, `order_date`, `order_time`, `fk_customer_id`, `fk_payment_id`, `fk_staff_id`, `fk_menu_type_id`, `fk_store_id`) VALUES
-(11, '2024-04-01', '12:00:00', 1, 1, 2, 1, 1),
-(12, '2024-04-02', '13:30:00', 2, 2, 3, 2, 2),
-(13, '2024-04-03', '19:00:00', 3, 3, 1, 3, 3),
-(14, '2024-04-04', '08:45:00', 4, 1, 4, 4, 4),
-(15, '2024-04-05', '15:20:00', 5, 4, 5, 5, 5),
-(16, '2024-04-06', '18:10:00', 6, 5, 6, 6, 6),
-(17, '2024-04-07', '11:55:00', 7, 2, 7, 7, 7),
-(18, '2024-04-08', '20:30:00', 8, 5, 8, 8, 8),
-(19, '2024-04-09', '09:15:00', 9, 4, 9, 9, 9),
-(20, '2024-04-10', '14:40:00', 10, 2, 10, 10, 10);
+INSERT INTO `order` (`order_id`, `order_date`, `order_time`, `fk_customer_id`, `fk_payment_id`, `fk_staff_id`, `fk_menu_type_id`, `fk_store_id`, `menu_name`) VALUES
+(11, '2024-04-01', '12:00:00', 1, 1, 2, 1, 1, 'saver'),
+(12, '2024-04-02', '13:30:00', 2, 2, 1, 2, 2, 'regular'),
+(13, '2024-04-03', '19:00:00', 3, 3, 1, 3, 3, 'saver'),
+(14, '2024-04-04', '08:45:00', 4, 1, 4, 4, 4, 'saver'),
+(15, '2024-04-05', '15:20:00', 5, 4, 5, 5, 5, 'regular'),
+(16, '2024-04-06', '18:10:00', 6, 5, 6, 6, 6, 'regular'),
+(17, '2024-04-07', '11:55:00', 7, 2, 7, 7, 7, 'saver'),
+(18, '2024-04-08', '20:30:00', 8, 5, 10, 8, 8, 'regular'),
+(19, '2024-04-09', '09:15:00', 9, 4, 9, 9, 9, 'saver'),
+(20, '2024-04-10', '14:40:00', 10, 2, 10, 10, 10, 'regular');
 
 -- --------------------------------------------------------
 
@@ -262,24 +263,25 @@ CREATE TABLE `staff` (
   `staff_firstname` varchar(255) DEFAULT NULL,
   `staff_surname` varchar(255) DEFAULT NULL,
   `staff_role` varchar(255) DEFAULT NULL,
-  `staff_tel` varchar(255) DEFAULT NULL
+  `staff_tel` varchar(255) DEFAULT NULL,
+  `staff_shift` varchar(8) NOT NULL DEFAULT 'Day'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`staff_id`, `staff_firstname`, `staff_surname`, `staff_role`, `staff_tel`) VALUES
-(1, 'Michael', 'Brown', 'Manager', '111-222-3333'),
-(2, 'Emily', 'Davis', 'Cashier', '444-555-6666'),
-(3, 'David', 'Wilson', 'Chef', '777-888-9999'),
-(4, 'Sarah', 'Smith', 'Server', '888-777-6666'),
-(5, 'Chris', 'Johnson', 'Delivery', '555-444-3333'),
-(6, 'Rachel', 'Taylor', 'Manager', '333-222-1111'),
-(7, 'Kevin', 'Anderson', 'Cashier', '222-333-4444'),
-(8, 'Amanda', 'Martinez', 'Chef', '666-555-4444'),
-(9, 'Mark', 'Hernandez', 'Server', '777-666-5555'),
-(10, 'Jennifer', 'Young', 'Delivery', '888-999-0000');
+INSERT INTO `staff` (`staff_id`, `staff_firstname`, `staff_surname`, `staff_role`, `staff_tel`, `staff_shift`) VALUES
+(1, 'Michael', 'Brown', 'Manager', '111-222-3333', 'Day'),
+(2, 'Emily', 'Davis', 'Cashier', '444-555-6666', 'Night'),
+(3, 'David', 'Wilson', 'Chef', '777-888-9999', 'Day'),
+(4, 'Sarah', 'Smith', 'Server', '888-777-6666', 'Day'),
+(5, 'Chris', 'Johnson', 'Delivery', '555-444-3333', 'Night'),
+(6, 'Rachel', 'Taylor', 'Manager', '333-222-1111', 'Day'),
+(7, 'Kevin', 'Anderson', 'Cashier', '222-333-4444', 'Night'),
+(8, 'Amanda', 'Martinez', 'Chef', '666-555-4444', 'Night'),
+(9, 'Mark', 'Hernandez', 'Server', '777-666-5555', 'Day'),
+(10, 'Jennifer', 'Young', 'Delivery', '888-999-0000', 'Day');
 
 -- --------------------------------------------------------
 
