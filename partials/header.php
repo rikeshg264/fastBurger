@@ -1,5 +1,6 @@
 <?php
-    define('BASE_PATH', 'http://localhost:8040/fastBurger/');
+    // define('BASE_PATH', 'http://localhost:8040/fastBurger/');
+    define('BASE_PATH', 'http://localhost/fastBurger/');
     $title = 'Fast Burger';
     // $name = $_SESSION['Rikesh'];
 
